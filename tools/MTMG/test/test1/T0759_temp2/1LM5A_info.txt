@@ -1,0 +1,408 @@
+ID:1
+New index:8
+Original index:1
+Name:S
+ID:2
+New index:9
+Original index:2
+Name:S
+ID:3
+New index:10
+Original index:3
+Name:P
+ID:4
+New index:11
+Original index:4
+Name:I
+ID:5
+New index:12
+Original index:6
+Name:A
+ID:6
+New index:13
+Original index:7
+Name:I
+ID:7
+New index:14
+Original index:8
+Name:F
+ID:8
+New index:15
+Original index:9
+Name:D
+ID:9
+New index:16
+Original index:10
+Name:T
+ID:10
+New index:17
+Original index:11
+Name:E
+ID:11
+New index:18
+Original index:12
+Name:N
+ID:12
+New index:19
+Original index:13
+Name:L
+ID:13
+New index:20
+Original index:14
+Name:E
+ID:14
+New index:21
+Original index:15
+Name:K
+ID:15
+New index:22
+Original index:16
+Name:I
+ID:16
+New index:23
+Original index:17
+Name:S
+ID:17
+New index:24
+Original index:18
+Name:I
+ID:18
+New index:25
+Original index:19
+Name:T
+ID:19
+New index:26
+Original index:20
+Name:E
+ID:20
+New index:27
+Original index:21
+Name:G
+ID:21
+New index:28
+Original index:22
+Name:I
+ID:22
+New index:29
+Original index:23
+Name:E
+ID:23
+New index:30
+Original index:24
+Name:R
+ID:24
+New index:31
+Original index:25
+Name:G
+ID:25
+New index:32
+Original index:26
+Name:I
+ID:26
+New index:33
+Original index:27
+Name:V
+ID:27
+New index:34
+Original index:28
+Name:D
+ID:28
+New index:35
+Original index:29
+Name:S
+ID:29
+New index:36
+Original index:30
+Name:I
+ID:30
+New index:37
+Original index:31
+Name:T
+ID:31
+New index:38
+Original index:32
+Name:G
+ID:32
+New index:39
+Original index:33
+Name:Q
+ID:33
+New index:40
+Original index:34
+Name:R
+ID:34
+New index:41
+Original index:35
+Name:L
+ID:35
+New index:42
+Original index:36
+Name:L
+ID:36
+New index:43
+Original index:37
+Name:E
+ID:37
+New index:44
+Original index:38
+Name:A
+ID:38
+New index:45
+Original index:39
+Name:Q
+ID:39
+New index:46
+Original index:40
+Name:A
+ID:40
+New index:47
+Original index:41
+Name:C
+ID:41
+New index:48
+Original index:42
+Name:T
+ID:42
+New index:49
+Original index:43
+Name:G
+ID:43
+New index:50
+Original index:44
+Name:G
+ID:44
+New index:51
+Original index:45
+Name:I
+ID:45
+New index:52
+Original index:46
+Name:I
+ID:46
+New index:53
+Original index:104
+Name:F
+ID:47
+New index:54
+Original index:105
+Name:L
+ID:48
+New index:55
+Original index:106
+Name:E
+ID:49
+New index:56
+Original index:107
+Name:F
+ID:50
+New index:57
+Original index:108
+Name:Q
+ID:51
+New index:58
+Original index:109
+Name:Y
+ID:52
+New index:59
+Original index:110
+Name:L
+ID:53
+New index:60
+Original index:111
+Name:T
+ID:54
+New index:61
+Original index:112
+Name:G
+ID:55
+New index:62
+Original index:113
+Name:G
+ID:56
+New index:63
+Original index:114
+Name:L
+ID:57
+New index:64
+Original index:115
+Name:V
+ID:58
+New index:65
+Original index:116
+Name:D
+ID:59
+New index:66
+Original index:117
+Name:P
+ID:60
+New index:67
+Original index:118
+Name:E
+ID:61
+New index:68
+Original index:119
+Name:V
+ID:62
+New index:69
+Original index:120
+Name:H
+ID:63
+New index:70
+Original index:121
+Name:G
+ID:64
+New index:71
+Original index:122
+Name:R
+ID:65
+New index:72
+Original index:123
+Name:I
+ID:66
+New index:73
+Original index:124
+Name:S
+ID:67
+New index:74
+Original index:125
+Name:T
+ID:68
+New index:75
+Original index:126
+Name:E
+ID:69
+New index:76
+Original index:127
+Name:E
+ID:70
+New index:77
+Original index:128
+Name:A
+ID:71
+New index:78
+Original index:129
+Name:I
+ID:72
+New index:79
+Original index:130
+Name:R
+ID:73
+New index:80
+Original index:131
+Name:K
+ID:74
+New index:81
+Original index:132
+Name:G
+ID:75
+New index:82
+Original index:133
+Name:F
+ID:76
+New index:83
+Original index:134
+Name:I
+ID:77
+New index:84
+Original index:135
+Name:D
+ID:78
+New index:85
+Original index:136
+Name:G
+ID:79
+New index:86
+Original index:137
+Name:R
+ID:80
+New index:87
+Original index:138
+Name:A
+ID:81
+New index:88
+Original index:139
+Name:A
+ID:82
+New index:89
+Original index:140
+Name:Q
+ID:83
+New index:90
+Original index:141
+Name:R
+ID:84
+New index:91
+Original index:142
+Name:L
+ID:85
+New index:92
+Original index:143
+Name:Q
+ID:86
+New index:93
+Original index:144
+Name:D
+ID:87
+New index:94
+Original index:145
+Name:T
+ID:88
+New index:95
+Original index:146
+Name:S
+ID:89
+New index:96
+Original index:147
+Name:S
+ID:90
+New index:97
+Original index:148
+Name:Y
+ID:91
+New index:98
+Original index:149
+Name:A
+ID:92
+New index:99
+Original index:150
+Name:K
+ID:93
+New index:100
+Original index:151
+Name:I
+ID:94
+New index:101
+Original index:152
+Name:L
+ID:95
+New index:102
+Original index:153
+Name:T
+ID:96
+New index:103
+Original index:154
+Name:C
+ID:97
+New index:104
+Original index:155
+Name:P
+ID:98
+New index:105
+Original index:156
+Name:K
+ID:99
+New index:106
+Original index:157
+Name:T
+ID:100
+New index:107
+Original index:158
+Name:K
+ID:101
+New index:108
+Original index:159
+Name:L
+ID:102
+New index:109
+Original index:160
+Name:K

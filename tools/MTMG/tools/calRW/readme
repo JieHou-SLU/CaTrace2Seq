@@ -1,0 +1,47 @@
+RW potential mannual  
+*******************************
+A distance-dependent atomic potential from random-walk ideal chain reference state 
+package version 1.0
+
+1. Introduction.
+
+   RW is distance-dependent atomic potential for protein structure modeling and structure 
+   decoy recognition. It is calculated from 1,383 high-resolution PDB structures using an 
+   ideal random-walk chain as the reference state. The RW potential has been extensively 
+   optimized and tested on a variety of protein structure decoy sets and demonstrates a 
+   significant power in protein structure recognition and a strong correlation with the 
+   RMSD of decoys to the native structures. 
+   
+
+   The package includes following files:
+
+       1) calRW   : The executable program to calculate RW score;
+       2) data    : The RW potential data file;
+       3) pro.pdb : The example pdb file;
+       4) readme  : Readme file.
+
+2. Installation.
+
+   You need to download the "calRW.tar.gz" file and unpack the files by running "tar -xzf calRW.tar.gz".
+   Have "calRW" and "data" files in the same folder.
+
+3. Usage.
+
+   ./calRW pdb
+   Example: ./calRW pro.pdb
+   Result should be: RW potential =   -17737.993352 kcal/mol   
+
+4. Contact.
+
+   For question and comments, please contact: 
+   Jian Zhang (jianzha@umich.edu) or 
+   Yang Zhang (zhng@umich.edu).
+
+5. Reference.
+
+   Please cite following paper when you use the RW potential:
+
+   Jian Zhang and Yang Zhang, A Distance-Dependent Atomic 
+   Potential Derived from Random-Walk Ideal Chain Reference 
+   State for Protein Fold Selection and Structure Prediction (2009) submitted. 
+
