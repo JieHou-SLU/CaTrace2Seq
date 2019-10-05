@@ -338,8 +338,8 @@ for($epoch=1;$epoch<=100;$epoch++)
 	print RUNFILE "\nprintf \"Use MTMG to refine...\"\n";
 
 	print RUNFILE "mkdir -p $outputfolder/Alignments/temp_$epoch/mtmg_refine/\n\n";
-  print RUNFILE "printf \"$installation_dir/tools/MTMG/mtmg $outputfolder/Alignments/temp_$epoch/ align.pir temp_$epoch $outputfolder/Alignments/temp_$epoch/mtmg_refine/ /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/New_sequence_mapping_jiealgo/scripts/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\"\n\n";
-	print RUNFILE "$installation_dir/tools/MTMG/mtmg $outputfolder/Alignments/temp_$epoch/ align.pir temp_$epoch $outputfolder/Alignments/temp_$epoch/mtmg_refine/ /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/New_sequence_mapping_jiealgo/scripts/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\n\n";
+  print RUNFILE "printf \"$installation_dir/tools/MTMG/mtmg $outputfolder/Alignments/temp_$epoch/ align.pir temp_$epoch $outputfolder/Alignments/temp_$epoch/mtmg_refine/ $installation_dir/tools/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\"\n\n";
+	print RUNFILE "$installation_dir/tools/MTMG/mtmg $outputfolder/Alignments/temp_$epoch/ align.pir temp_$epoch $outputfolder/Alignments/temp_$epoch/mtmg_refine/ $installation_dir/tools/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\n\n";
     print RUNFILE "cp $outputfolder/Alignments/temp_$epoch/mtmg_refine/temp_$epoch.pdb $outputfolder/Models\n\n";
 
 	print RUNFILE "mv $shell_dir/temp_$epoch.sh.running $shell_dir/temp_$epoch.sh.done";
@@ -410,8 +410,8 @@ for($epoch=1;$epoch<=50;$epoch++)
 	print RUNFILE "\nprintf \"Use MTMG to refine...\"\n";
 
 	print RUNFILE "mkdir -p $outputfolder/Alignments/temp_NC_$epoch/mtmg_refine/\n\n";
-  print RUNFILE "printf \"$installation_dir/tools/MTMG/mtmg $outputfolder/Alignments/temp_NC_$epoch/ align.pir temp_NC_$epoch $outputfolder/Alignments/temp_NC_$epoch/mtmg_refine/ /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/New_sequence_mapping_jiealgo/scripts/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\"\n\n";
-	print RUNFILE "$installation_dir/tools/MTMG/mtmg $outputfolder/Alignments/temp_NC_$epoch/ align.pir temp_NC_$epoch $outputfolder/Alignments/temp_NC_$epoch/mtmg_refine/ /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/New_sequence_mapping_jiealgo/scripts/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\n\n";
+  print RUNFILE "printf \"$installation_dir/tools/MTMG/mtmg $outputfolder/Alignments/temp_NC_$epoch/ align.pir temp_NC_$epoch $outputfolder/Alignments/temp_NC_$epoch/mtmg_refine/ $installation_dir/tools/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\"\n\n";
+	print RUNFILE "$installation_dir/tools/MTMG/mtmg $outputfolder/Alignments/temp_NC_$epoch/ align.pir temp_NC_$epoch $outputfolder/Alignments/temp_NC_$epoch/mtmg_refine/ $installation_dir/tools/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\n\n";
     print RUNFILE "cp $outputfolder/Alignments/temp_NC_$epoch/mtmg_refine/temp_NC_$epoch.pdb $outputfolder/Models\n\n";
 
 	print RUNFILE "mv $shell_dir/temp_NC_$epoch.sh.running $shell_dir/temp_NC_$epoch.sh.done";
@@ -460,8 +460,8 @@ for($epoch=1;$epoch<=100;$epoch++)
 	print RUNFILE "\nprintf \"Use MTMG to refine...\"\n";
 
 	print RUNFILE "mkdir -p $outputfolder/Alignments/temp_r_$epoch/mtmg_refine/\n\n";
-  print RUNFILE "printf \"$installation_dir/tools/MTMG/mtmg $outputfolder/Alignments/temp_r_$epoch/ align.pir temp_r_$epoch $outputfolder/Alignments/temp_r_$epoch/mtmg_refine/ /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/New_sequence_mapping_jiealgo/scripts/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\"\n\n";
-	print RUNFILE "$installation_dir/tools/MTMG/mtmg $outputfolder/Alignments/temp_r_$epoch/ align.pir temp_r_$epoch $outputfolder/Alignments/temp_r_$epoch/mtmg_refine/ /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/New_sequence_mapping_jiealgo/scripts/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\n\n";
+  print RUNFILE "printf \"$installation_dir/tools/MTMG/mtmg $outputfolder/Alignments/temp_r_$epoch/ align.pir temp_r_$epoch $outputfolder/Alignments/temp_r_$epoch/mtmg_refine/ $installation_dir/tools/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\"\n\n";
+	print RUNFILE "$installation_dir/tools/MTMG/mtmg $outputfolder/Alignments/temp_r_$epoch/ align.pir temp_r_$epoch $outputfolder/Alignments/temp_r_$epoch/mtmg_refine/ $installation_dir/tools/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\n\n";
     print RUNFILE "cp $outputfolder/Alignments/temp_r_$epoch/mtmg_refine/temp_r_$epoch.pdb $outputfolder/Models\n\n";
 
 	print RUNFILE "mv $shell_dir/temp_r_$epoch.sh.running $shell_dir/temp_r_$epoch.sh.done\n\n";
@@ -533,8 +533,8 @@ for($epoch=1;$epoch<=50;$epoch++)
 	print RUNFILE "\nprintf \"Use MTMG to refine...\"\n";
 
 	print RUNFILE "mkdir -p $outputfolder/Alignments/temp_r_NC_$epoch/mtmg_refine/\n\n";
-  print RUNFILE "printf \"$installation_dir/tools/MTMG/mtmg $outputfolder/Alignments/temp_r_NC_$epoch/ align.pir temp_r_NC_$epoch $outputfolder/Alignments/temp_r_NC_$epoch/mtmg_refine/ /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/New_sequence_mapping_jiealgo/scripts/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\"\n\n";
-	print RUNFILE "$installation_dir/tools/MTMG/mtmg $outputfolder/Alignments/temp_r_NC_$epoch/ align.pir temp_r_NC_$epoch $outputfolder/Alignments/temp_r_NC_$epoch/mtmg_refine/ /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/New_sequence_mapping_jiealgo/scripts/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\n\n";
+  print RUNFILE "printf \"$installation_dir/tools/MTMG/mtmg $outputfolder/Alignments/temp_r_NC_$epoch/ align.pir temp_r_NC_$epoch $outputfolder/Alignments/temp_r_NC_$epoch/mtmg_refine/ $installation_dir/tools/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\"\n\n";
+	print RUNFILE "$installation_dir/tools/MTMG/mtmg $outputfolder/Alignments/temp_r_NC_$epoch/ align.pir temp_r_NC_$epoch $outputfolder/Alignments/temp_r_NC_$epoch/mtmg_refine/ $installation_dir/tools/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\n\n";
     print RUNFILE "cp $outputfolder/Alignments/temp_r_NC_$epoch/mtmg_refine/temp_r_NC_$epoch.pdb $outputfolder/Models\n\n";
 
 	print RUNFILE "mv $shell_dir/temp_r_NC_$epoch.sh.running $shell_dir/temp_r_NC_$epoch.sh.done\n\n";
