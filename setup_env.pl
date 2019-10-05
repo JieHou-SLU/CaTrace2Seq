@@ -198,8 +198,7 @@ print OUT "#!/bin/bash -e\n\n";
 print OUT "echo \" Start compile R-3.2.0 (will take ~3 min)\"\n\n";
 print OUT "cd $install_dir/tools/R-3.2.0\n\n";
 print OUT "make clean\n\n";
-print OUT "./configure --prefix=$install_dir/tools/R-3.2.0  --with-readline=no --with-x
-=no\n\n";
+print OUT "./configure --prefix=$install_dir/tools/R-3.2.0  --with-readline=no --with-x=no\n\n";
 print OUT "make\n\n";
 print OUT "make install\n\n";
 print OUT "echo \"installed\" > $install_dir/tools/R-3.2.0/install.done\n\n";
