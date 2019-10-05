@@ -1,25 +1,10 @@
+#!/usr/bin/perl -w
 ##############  This program will be called if the length of fragment is shorter than fasta sequence
-
 
 our %AA3TO1 = qw(ALA A ASN N CYS C GLN Q HIS H LEU L MET M PRO P THR T TYR Y ARG R ASP D GLU E GLY G ILE I LYS K PHE F SER S TRP W VAL V);
 our %AA1TO3 = reverse %AA3TO1;
 
-
-# perl /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/new_simulated_map_20190831/2GZ4-C/new_results/generate_alignment_case2.pl  /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/new_simulated_map_20190831/2GZ4-C/new_results/2GZ4_filtered.pdb /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/new_simulated_map_20190831/2GZ4-C/new_results/2GZ4-C.fasta  /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/new_simulated_map_20190831/2GZ4-C/new_results/filtered_results 10
-
-
-# /scratch/jh7x3/multicom/tools/TMscore 2D.pdb ../input/2GZ4-C.pdb
-
-
-# cd /scratch/jh7x3/multicom/tools/SBROD
-
-# ./assess_protein /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/new_simulated_map_20190831/2GZ4-C/new_results/Models/*pdb > /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/new_simulated_map_20190831/2GZ4-C/new_results/Models/score.txt
-
-
-# perl /storage/htc/bdm/jh7x3/DeepRank/src/scripts/sort_deep_qa_score.pl  /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/new_simulated_map_20190831/2GZ4-C/new_results/Models/score.txt /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/new_simulated_map_20190831/2GZ4-C/new_results/Models/score_new.txt
-
-
-
+$installation_dir = '/Users/jay/Documents/CaTrace2Seq/';
 use List::Util qw(shuffle);
 
 if (@ARGV < 4)
@@ -95,7 +80,7 @@ if(-e $fitted_fragments)
 #####  (1) initialize sequence in fragment for forward
 
 `cp $input_pdb $outputfolder/input.pdb`;
-`/scratch/jh7x3/multicom/tools/pulchra304/pulchra -c -s $outputfolder/input.pdb`;
+`$installation_dir/tools/MTMG/tools/pulchra_306/pulchra -c -s $outputfolder/input.pdb`;
 
 $init_pdb = "$outputfolder/input.pdb";
 if(!(-e "$outputfolder/input.rebuilt.pdb"))
@@ -103,7 +88,7 @@ if(!(-e "$outputfolder/input.rebuilt.pdb"))
   $init_pdb = "$outputfolder/input.pdb";
 }else{
 
-  `/scratch/jh7x3/multicom/tools/scwrl4/Scwrl4 -i $outputfolder/input.rebuilt.pdb -o  $outputfolder/input_scwrl.pdb`;
+  `$installation_dir/tools/MTMG/Scwrl4  -i $outputfolder/input.rebuilt.pdb -o  $outputfolder/input_scwrl.pdb`;
   if(!(-e "$outputfolder/input_scwrl.pdb"))
   {
     $init_pdb = "$outputfolder/input.rebuilt.pdb";
@@ -200,7 +185,7 @@ print OUTPDB "END\n";
 close OUTPDB;
 
 
-`/scratch/jh7x3/multicom/tools/pulchra304/pulchra -c -s $outputfolder/input_r.pdb`;
+`$installation_dir/tools/MTMG/tools/pulchra_306/pulchra -c -s $outputfolder/input_r.pdb`;
 
 $init_pdb = "$outputfolder/input_r.pdb";
 if(!(-e "$outputfolder/input_r.rebuilt.pdb"))
@@ -208,7 +193,7 @@ if(!(-e "$outputfolder/input_r.rebuilt.pdb"))
   $init_pdb = "$outputfolder/input_r.pdb";
 }else{
 
-  `/scratch/jh7x3/multicom/tools/scwrl4/Scwrl4 -i $outputfolder/input_r.rebuilt.pdb -o  $outputfolder/input_r_scwrl.pdb`;
+  `$installation_dir/tools/MTMG/Scwrl4  -i $outputfolder/input_r.rebuilt.pdb -o  $outputfolder/input_r_scwrl.pdb`;
   if(!(-e "$outputfolder/input_r_scwrl.pdb"))
   {
     $init_pdb = "$outputfolder/input_r.rebuilt.pdb";
@@ -265,7 +250,7 @@ close OUTPDB;
 
 $init_pdb = "$outputfolder/temp0.pdb";
 
-`/scratch/jh7x3/multicom/tools/scwrl4/Scwrl4 -i $outputfolder/temp0.pdb -o  $outputfolder/temp0_scwrl.pdb`;
+`$installation_dir/tools/MTMG/Scwrl4  -i $outputfolder/temp0.pdb -o  $outputfolder/temp0_scwrl.pdb`;
 if(!(-e "$outputfolder/temp0_scwrl.pdb"))
 {
   $init_pdb = "$outputfolder/temp0.pdb";
@@ -276,7 +261,7 @@ if(!(-e "$outputfolder/temp0_scwrl.pdb"))
 
 $init_pdb_reverse = "$outputfolder/temp0_r.pdb";
 
-`/scratch/jh7x3/multicom/tools/scwrl4/Scwrl4 -i $outputfolder/temp0_r.pdb -o  $outputfolder/temp0_r_scwrl.pdb`;
+`$installation_dir/tools/MTMG/Scwrl4  -i $outputfolder/temp0_r.pdb -o  $outputfolder/temp0_r_scwrl.pdb`;
 if(!(-e "$outputfolder/temp0_r_scwrl.pdb"))
 {
   $init_pdb_reverse = "$outputfolder/temp0_r.pdb";
@@ -332,63 +317,6 @@ chdir("$outputfolder/Atoms");
 #`gzip -f aaaaA.atom`; 
 #`gzip -f aaaaB.atom`; 
 
-=pod
-##### (5) self modeling
-
-$pir_file = $outputfolder . "/temp0.pir";
-open(PIR, ">$pir_file") || die "can't create pir file $pir_file.\n";
-$dlen = length($pdb_seq);
-print PIR "C;combination 1, $target_id\n";
-print PIR ">P1;fragment\n";
-print PIR "structureX:fragment: 1: $this_rchain: $dlen: : : : : \n"; 
-print PIR "$pdb_seq*\n\n";
-
-print PIR "C; CA-trace Refinement\n"; 
-print PIR ">P1;temp0_refine\n";
-print PIR " : : : : : : : : : \n";
-print PIR "$pdb_seq*\n";
-close PIR; 
-
-print "\nUse Modeller to refine...\n";
-print("perl /scratch/jh7x3/multicom/tools/Domain_assembly/scripts/pir2ts_energy_9v16.pl /scratch/jh7x3/multicom/tools/modeller-9.16/bin/mod9.16 $outputfolder/Atoms $outputfolder $pir_file 1\n"); 
-system("perl /scratch/jh7x3/multicom/tools/Domain_assembly/scripts/pir2ts_energy_9v16.pl /scratch/jh7x3/multicom/tools/modeller-9.16/bin/mod9.16  $outputfolder/Atoms $outputfolder $pir_file 1"); 
-
-
-$pir_file = $outputfolder . "/temp0_r.pir";
-open(PIR, ">$pir_file") || die "can't create pir file $pir_file.\n";
-$dlen = length($pdb_seq);
-print PIR "C;combination 1, $target_id\n";
-print PIR ">P1;fragment_reverse\n";
-print PIR "structureX:fragment_reverse: 1: $this_rchain: $dlen: : : : : \n"; 
-print PIR "$pdb_seq*\n\n";
-
-print PIR "C; CA-trace Refinement\n"; 
-print PIR ">P1;temp0_r_refine\n";
-print PIR " : : : : : : : : : \n";
-print PIR "$pdb_seq*\n";
-close PIR; 
-
-print "\nUse Modeller to refine...\n";
-print("perl /scratch/jh7x3/multicom/tools/Domain_assembly/scripts/pir2ts_energy_9v16.pl /scratch/jh7x3/multicom/tools/modeller-9.16/bin/mod9.16 $outputfolder/Atoms $outputfolder $pir_file 1\n"); 
-system("perl /scratch/jh7x3/multicom/tools/Domain_assembly/scripts/pir2ts_energy_9v16.pl /scratch/jh7x3/multicom/tools/modeller-9.16/bin/mod9.16  $outputfolder/Atoms $outputfolder $pir_file 1"); 
-
-if(-e "$outputfolder/temp0_refine.pdb")
-{
-  `cp $outputfolder/temp0_refine.pdb $outputfolder/Atoms/fragment.atom`;
-}
-if(-e "$outputfolder/temp0_r_refine.pdb")
-{
-  `cp $init_pdb_reverse $outputfolder/Atoms/fragment_reverse.atom`;
-}
-
-chdir("$outputfolder/Atoms");
-`gzip -f fragment.atom`; 
-`gzip -f fragment_reverse.atom`; 
-=cut
-
-
-
-
 ##### (6) Generate alignments for forward direction
 chdir($outputfolder);
 
@@ -431,8 +359,8 @@ for($i=1;$i<=$n_gaps;$i++)
   	print RUNFILE "\nprintf \"Use MTMG to refine...\"\n";
   
   	print RUNFILE "mkdir -p $outputfolder/Alignments/temp_NC_$i/mtmg_refine/\n\n";
-    print RUNFILE "printf \"/storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/New_sequence_mapping_jiealgo/scripts/MTMG/mtmg $outputfolder/Alignments/temp_NC_$i/ align.pir temp_NC_$i $outputfolder/Alignments/temp_NC_$i/mtmg_refine/ /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/New_sequence_mapping_jiealgo/scripts/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\"\n\n";
-  	print RUNFILE "/storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/New_sequence_mapping_jiealgo/scripts/MTMG/mtmg $outputfolder/Alignments/temp_NC_$i/ align.pir temp_NC_$i $outputfolder/Alignments/temp_NC_$i/mtmg_refine/ /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/New_sequence_mapping_jiealgo/scripts/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\n\n";
+    print RUNFILE "printf \"$installation_dir/tools/MTMG/mtmg $outputfolder/Alignments/temp_NC_$i/ align.pir temp_NC_$i $outputfolder/Alignments/temp_NC_$i/mtmg_refine/ /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/New_sequence_mapping_jiealgo/scripts/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\"\n\n";
+  	print RUNFILE "$installation_dir/tools/MTMG/mtmg $outputfolder/Alignments/temp_NC_$i/ align.pir temp_NC_$i $outputfolder/Alignments/temp_NC_$i/mtmg_refine/ /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/New_sequence_mapping_jiealgo/scripts/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\n\n";
     print RUNFILE "cp $outputfolder/Alignments/temp_NC_$i/mtmg_refine/temp_NC_$i.pdb $outputfolder/Models\n\n";
   
   	print RUNFILE "mv $shell_dir/temp_NC_$i.sh.running $shell_dir/temp_NC_$i.sh.done\n\n";
@@ -472,8 +400,8 @@ for($i=1;$i<=$n_gaps;$i++)
   	print RUNFILE "\nprintf \"Use MTMG to refine...\"\n";
   
   	print RUNFILE "mkdir -p $outputfolder/Alignments/temp_r_NC_$i/mtmg_refine/\n\n";
-    print RUNFILE "printf \"/storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/New_sequence_mapping_jiealgo/scripts/MTMG/mtmg $outputfolder/Alignments/temp_r_NC_$i/ align.pir temp_r_NC_$i $outputfolder/Alignments/temp_r_NC_$i/mtmg_refine/ /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/New_sequence_mapping_jiealgo/scripts/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\"\n\n";
-  	print RUNFILE "/storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/New_sequence_mapping_jiealgo/scripts/MTMG/mtmg $outputfolder/Alignments/temp_r_NC_$i/ align.pir temp_r_NC_$i $outputfolder/Alignments/temp_r_NC_$i/mtmg_refine/ /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/New_sequence_mapping_jiealgo/scripts/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\n\n";
+    print RUNFILE "printf \"$installation_dir/tools/MTMG/mtmg $outputfolder/Alignments/temp_r_NC_$i/ align.pir temp_r_NC_$i $outputfolder/Alignments/temp_r_NC_$i/mtmg_refine/ /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/New_sequence_mapping_jiealgo/scripts/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\"\n\n";
+  	print RUNFILE "$installation_dir/tools/MTMG/mtmg $outputfolder/Alignments/temp_r_NC_$i/ align.pir temp_r_NC_$i $outputfolder/Alignments/temp_r_NC_$i/mtmg_refine/ /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/New_sequence_mapping_jiealgo/scripts/MTMG/ /storage/htc/bdm/jh7x3/DeepRank/tools/R-3.2.0/bin/ 0 d\n\n";
     print RUNFILE "cp $outputfolder/Alignments/temp_r_NC_$i/mtmg_refine/temp_r_NC_$i.pdb $outputfolder/Models\n\n";
   	print RUNFILE "mv $shell_dir/temp_r_NC_$i.sh.running $shell_dir/temp_r_NC_$i.sh.done\n\n";
   	close RUNFILE;
@@ -558,6 +486,7 @@ foreach $file_path (sort @running_files)
 #### check if all files have finished
 print "#### check if all files have finished\n";
 
+$elapse = 0;
 while(1)
 {
 
@@ -588,6 +517,12 @@ while(1)
   }
   
   sleep(60*5);
+  $elapse++;
+  if($elapse > 12*24)
+  {
+  	print "Running more than one day, quit!\n";
+  	last;
+  }
   
 }
 

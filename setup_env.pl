@@ -12,7 +12,7 @@ $install_dir=abs_path($install_dir);
 
 if(!-s $install_dir)
 {
-	die "The CryoEMSeq directory ($install_dir) is not existing, please revise the customize settings part inside the configure.pl, set the path as  your unzipped CryoEMSeq directory\n";
+	die "The CaTrace2Seq directory ($install_dir) is not existing, please revise the customize settings part inside the configure.pl, set the path as  your unzipped CaTrace2Seq directory\n";
 }
 
 if ( substr($install_dir, length($install_dir) - 1, 1) ne "/" )
@@ -27,37 +27,37 @@ chomp $cur_dir;
 $configure_file = "$cur_dir/setup_env.pl";
 if (! -f $configure_file || $install_dir ne "$cur_dir/")
 {
-        die "\nPlease check the installation directory setting and run the configure program under the main directory of CryoEMSeq.\n";
+        die "\nPlease check the installation directory setting and run the configure program under the main directory of CaTrace2Seq.\n";
 }
 print " OK!\n";
 
 
-$CryoEMSeq_db_tools_dir = "$install_dir/tools/";
+$CaTrace2Seq_db_tools_dir = "$install_dir/tools/";
 
-if(!(-d $CryoEMSeq_db_tools_dir))
+if(!(-d $CaTrace2Seq_db_tools_dir))
 {
-	$status = system("mkdir $CryoEMSeq_db_tools_dir");
+	$status = system("mkdir $CaTrace2Seq_db_tools_dir");
 	if($status)
 	{
-		die "Failed to create folder $CryoEMSeq_db_tools_dir\n\n";
+		die "Failed to create folder $CaTrace2Seq_db_tools_dir\n\n";
 	}
 }
-$CryoEMSeq_db_tools_dir=abs_path($CryoEMSeq_db_tools_dir);
+$CaTrace2Seq_db_tools_dir=abs_path($CaTrace2Seq_db_tools_dir);
 
 
 
-if ( substr($CryoEMSeq_db_tools_dir, length($CryoEMSeq_db_tools_dir) - 1, 1) ne "/" )
+if ( substr($CaTrace2Seq_db_tools_dir, length($CaTrace2Seq_db_tools_dir) - 1, 1) ne "/" )
 {
-        $CryoEMSeq_db_tools_dir .= "/";
+        $CaTrace2Seq_db_tools_dir .= "/";
 }
 
-print "Start install CryoEMSeq into <$CryoEMSeq_db_tools_dir>\n"; 
+print "Start install CaTrace2Seq into <$CaTrace2Seq_db_tools_dir>\n"; 
 
 
 
-chdir($CryoEMSeq_db_tools_dir);
+chdir($CaTrace2Seq_db_tools_dir);
 
-$tools_dir = "$CryoEMSeq_db_tools_dir";
+$tools_dir = "$CaTrace2Seq_db_tools_dir";
 
 
 if(!-d $tools_dir)
@@ -82,6 +82,7 @@ if (! -f $option_list)
         die "\nOption file $option_list not exists.\n";
 }
 configure_file2($option_list,'bin');
+configure_file2($option_list,'scripts');
 configure_file2($option_list,'example');
 
 print "#########  Configuring option files, done\n\n\n";
@@ -96,7 +97,8 @@ system("chmod +x $install_dir/example/*.sh");
 print("\n#### (2) Download basic tools\n\n");
 
 chdir($tools_dir);
-$basic_tools_list = "scwrl4.tar.gz;TMscore.tar.gz;pulchra_306.tar.gz;qprob_package.tar.gz";
+#$basic_tools_list = "TMscore.tar.gz;qprob_package.tar.gz";
+$basic_tools_list = "TMscore.tar.gz";
 @basic_tools = split(';',$basic_tools_list);
 foreach $tool (@basic_tools)
 {
@@ -129,11 +131,11 @@ foreach $tool (@basic_tools)
 		`rm $tool`;
 		`chmod -R 755 $toolname`;
 	}else{
-		die "Failed to download $tool from http://sysbio.rnet.missouri.edu/bdm_download/CryoEMSeq_db_tools/tools, please contact chengji\@missouri.edu\n";
+		die "Failed to download $tool from http://sysbio.rnet.missouri.edu/bdm_download/CaTrace2Seq_db_tools/tools, please contact chengji\@missouri.edu\n";
 	}
 }
 
-$tooldir = $CryoEMSeq_db_tools_dir.'/qprob_package';
+$tooldir = $CaTrace2Seq_db_tools_dir.'/qprob_package';
 if(-d $tooldir)
 {
 	print "\n\n#########  Setting up qprob_package/\n";
@@ -150,7 +152,7 @@ if(-d $tooldir)
 	}
 }
 
-$addr_scwrl4 = $CryoEMSeq_db_tools_dir."/scwrl4";
+$addr_scwrl4 = $CaTrace2Seq_db_tools_dir."/MTMG/";
 if(-d $addr_scwrl4)
 {
 	print "\n#########  Setting up scwrl4 \n";
@@ -178,28 +180,6 @@ if(-d $addr_scwrl4)
 	$OUT->close();
 	print "Done\n";
 }
-
-
-
-#### create python virtual environment on multicom server
-
-open(OUT,">$install_dir/installation/P1_setup_python3.sh") || die "Failed to open file $install_dir/installation/P1_setup_python3.sh\n";
-print OUT "#!/bin/bash -e\n\n";
-print OUT "scl enable rh-python36 bash\n\n";
-close OUT;
-
-
-open(OUT,">$install_dir/installation/P2_python3_virtual.sh") || die "Failed to open file $install_dir/installation/P2_python3_virtual.sh\n";
-print OUT "#!/bin/bash -e\n\n";
-print OUT "echo \" Start install python3 virtual environment (will take ~1 min)\"\n\n";
-print OUT "cd $install_dir/tools\n\n";
-print OUT "rm -rf python3_virtualenv\n\n";
-print OUT "pyvenv python3_virtualenv\n\n";
-print OUT "source $install_dir/tools/python3_virtualenv/bin/activate\n\n";
-print OUT "pip install --upgrade pip\n\n";
-print OUT "pip install numpy\n\n";
-print OUT "echo \"installed\" > $install_dir/tools/python3_virtualenv/install.done\n\n";
-close OUT;
 
 
 print "\n\n";

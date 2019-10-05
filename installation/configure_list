@@ -1,6 +1,9 @@
 
 
-bin/run_CryoEMSeq.sh
+bin/run_CaTrace2Seq.sh
 
+scripts/generate_alignment_case1.pl
+scripts/generate_alignment_case2.pl
+scripts/generate_alignment_case2_update.pl
 
-example/run_STIV.sh
+#examples/run_STIV.sh

@@ -26,9 +26,9 @@ threshold=$4
 cpu_num=$5
 
 
-printf "perl SOFTWARE_PATH/scripts/CaTrace2Seq.pl $Ca_trace_file $fasta_file $outputdir $threshold $cpu_num\n\n"
+printf "perl /Users/jay/Documents/CaTrace2Seq/scripts/CaTrace2Seq.pl $Ca_trace_file $fasta_file $outputdir $threshold $cpu_num\n\n"
 
-perl SOFTWARE_PATH/scripts/CaTrace2Seq.pl $Ca_trace_file $fasta_file $outputdir $threshold $cpu_num
+perl /Users/jay/Documents/CaTrace2Seq/scripts/CaTrace2Seq.pl $Ca_trace_file $fasta_file $outputdir $threshold $cpu_num
 
 
 
