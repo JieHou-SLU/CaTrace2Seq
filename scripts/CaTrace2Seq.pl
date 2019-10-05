@@ -3,7 +3,7 @@
 our %AA3TO1 = qw(ALA A ASN N CYS C GLN Q HIS H LEU L MET M PRO P THR T TYR Y ARG R ASP D GLU E GLY G ILE I LYS K PHE F SER S TRP W VAL V);
 our %AA1TO3 = reverse %AA3TO1;
 
-$installation_dir = 'SOFTWARE_PATH';
+$installation_dir = '/Users/jay/Documents/CaTrace2Seq/';
 if (@ARGV !=5)
 {
 	die "Error: need five parameters: <path of Ca trace> <path of fasta sequence> <output-directory> <length threshold for fragment> <number of cpus>\n";
@@ -75,7 +75,7 @@ foreach (@lines_PDB) {
   next if $line !~ m/^ATOM/;
   @tmp = split(/\s+/,$line);
   $atomtype = parse_pdb_row($line,"aname");
-  next if $atomtype != 'CA';
+  next if $atomtype ne 'CA';
   
   
   if($frag_start == 0)
