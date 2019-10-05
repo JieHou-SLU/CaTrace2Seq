@@ -142,10 +142,10 @@ if($frag_num == 1)
   if(length($pdb_seq) > length($qseq))
   {
     print "perl $installation_dir/scripts/generate_alignment_case1.pl  $init_pdb $fasta_file  $outputfolder/frag1_fitting $proc_num\n\n";
-    `perl $installation_dir/scripts/generate_alignment_case1.pl  $outputfolder/frag_dir/frag1.pdb $fasta_file  $outputfolder $proc_num`;
+    `perl $installation_dir/scripts/generate_alignment_case1.pl  $outputfolder/frag_dir/frag1.pdb $fasta_file  $outputfolder/frag1_fitting $proc_num`;
   }else{
     print "perl $installation_dir/scripts/generate_alignment_case2.pl  $init_pdb $fasta_file  $outputfolder/frag1_fitting $proc_num\n\n";
-    `perl $installation_dir/scripts/generate_alignment_case2.pl  $outputfolder/frag_dir/frag1.pdb $fasta_file  $outputfolder $proc_num`;
+    `perl $installation_dir/scripts/generate_alignment_case2.pl  $outputfolder/frag_dir/frag1.pdb $fasta_file  $outputfolder/frag1_fitting $proc_num`;
   }
 }else{
 
