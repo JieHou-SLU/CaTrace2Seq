@@ -12,13 +12,13 @@
 #SBATCH --time 2-00:00
 #--------------------------------------------------------------------------------
 
-outputdir=/Users/jay/Documents/CaTrace2Seq/test/6272_out
+outputdir=/home/jh7x3/CaTrace2Seq/test/6272_out
 
-mkdir -p /Users/jay/Documents/CaTrace2Seq/test/6272_out
+mkdir -p /home/jh7x3/CaTrace2Seq/test/6272_out
 
-cd /Users/jay/Documents/CaTrace2Seq/test/6272_out
+cd /home/jh7x3/CaTrace2Seq/test/6272_out
 
-printf "perl /Users/jay/Documents/CaTrace2Seq/scripts/CaTrace2Seq.pl examples/6272/6272_fragment.pdb examples/6272/6272.fasta /Users/jay/Documents/CaTrace2Seq/test/6272_out 50 10\n\n"
+printf "perl /home/jh7x3/CaTrace2Seq/scripts/CaTrace2Seq.pl /home/jh7x3/CaTrace2Seq/examples/6272/6272_fragment.pdb /home/jh7x3/CaTrace2Seq/examples/6272/6272.fasta /home/jh7x3/CaTrace2Seq/test/6272_out 50 10\n\n"
 
-perl /Users/jay/Documents/CaTrace2Seq/scripts/CaTrace2Seq.pl examples/6272/6272_fragment.pdb examples/6272/6272.fasta /Users/jay/Documents/CaTrace2Seq/test/6272_out 50 10
+perl /home/jh7x3/CaTrace2Seq/scripts/CaTrace2Seq.pl /home/jh7x3/CaTrace2Seq/examples/6272/6272_fragment.pdb /home/jh7x3/CaTrace2Seq/examples/6272/6272.fasta /home/jh7x3/CaTrace2Seq/test/6272_out 50 10
 

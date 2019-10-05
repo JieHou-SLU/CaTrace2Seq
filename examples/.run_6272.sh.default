@@ -18,7 +18,7 @@ mkdir -p SOFTWARE_PATH/test/6272_out
 
 cd SOFTWARE_PATH/test/6272_out
 
-printf "perl SOFTWARE_PATH/scripts/CaTrace2Seq.pl examples/6272/6272_fragment.pdb examples/6272/6272.fasta SOFTWARE_PATH/test/6272_out 50 10\n\n"
+printf "perl SOFTWARE_PATH/scripts/CaTrace2Seq.pl SOFTWARE_PATH/examples/6272/6272_fragment.pdb SOFTWARE_PATH/examples/6272/6272.fasta SOFTWARE_PATH/test/6272_out 50 10\n\n"
 
-perl SOFTWARE_PATH/scripts/CaTrace2Seq.pl examples/6272/6272_fragment.pdb examples/6272/6272.fasta SOFTWARE_PATH/test/6272_out 50 10
+perl SOFTWARE_PATH/scripts/CaTrace2Seq.pl SOFTWARE_PATH/examples/6272/6272_fragment.pdb SOFTWARE_PATH/examples/6272/6272.fasta SOFTWARE_PATH/test/6272_out 50 10
 

@@ -3,7 +3,7 @@ our %AA3TO1 = qw(ALA A ASN N CYS C GLN Q HIS H LEU L MET M PRO P THR T TYR Y ARG
 our %AA1TO3 = reverse %AA3TO1;
 
 
-$installation_dir = '/Users/jay/Documents/CaTrace2Seq/';
+$installation_dir = '/home/jh7x3/CaTrace2Seq/';
 if (@ARGV < 4)
 {
 	die "Error: need seven parameters: domain_list, domain model folder, query file(fasta), target id, output dir, modeller path, model number. \n";

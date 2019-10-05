@@ -5,5 +5,6 @@ bin/run_CaTrace2Seq.sh
 scripts/generate_alignment_case1.pl
 scripts/generate_alignment_case2.pl
 scripts/generate_alignment_case2_update.pl
+scripts/CaTrace2Seq.pl
 
 examples/run_6272.sh
