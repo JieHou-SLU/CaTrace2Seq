@@ -6,7 +6,7 @@ our %AA1TO3 = reverse %AA3TO1;
 $installation_dir = '/Users/jay/Documents/CaTrace2Seq/';
 if (@ARGV < 4)
 {
-	die "Error: need seven parameters: domain_list, domain model folder, query file(fasta), target id, output dir, modeller path, model number. \n";
+	die "Error: need at least four parameters: <path of Ca trace> <path of fasta sequence> <output-directory> <number of cpus> <previous fitted fragments, optional>. \n";
 }
 #### 
 $input_pdb = shift @ARGV;

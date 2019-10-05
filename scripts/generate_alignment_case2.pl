@@ -7,16 +7,15 @@ our %AA1TO3 = reverse %AA3TO1;
 $installation_dir = '/Users/jay/Documents/CaTrace2Seq/';
 use List::Util qw(shuffle);
 
-if (@ARGV < 4)
+if (@ARGV != 4)
 {
-	die "Error: need seven parameters: domain_list, domain model folder, query file(fasta), target id, output dir, modeller path, model number. \n";
+	die "Error: need four parameters: <path of Ca trace> <path of fasta sequence> <output-directory> <number of cpus> \n";
 }
 #### 
 $input_pdb = shift @ARGV;
 $fasta_file = shift @ARGV;
 $outputfolder = shift @ARGV;
 $proc_num = shift @ARGV;
-$fitted_fragments = shift @ARGV;
 
 -d $outputfolder || `mkdir $outputfolder`;
 #get query name and sequence 
@@ -48,30 +47,6 @@ if ($target_id =~ /^>/)
 else
 {
 	die "Error: fasta foramt error.\n"; 
-}
-
-## loading previous fitted fragments if exists
-%previous_fitted_fragments = ();
-if(-e $fitted_fragments)
-{
-  open(TMP,"$fitted_fragments") || die "Failed to open file $fitted_fragments\n";
-  while(<TMP>)
-  {
-    $line = $_;
-    chomp $line;
-    @tmp = split(/\s/,$line);
-    $pdb_path = $tmp[0];
-    $start = $tmp[1];
-    $end = $tmp[2];
-    if(-e $pdb_path)
-    {
-      print "Loading $pdb_path with range $start-$end\n\n";
-      $previous_fitted_fragments{$pdb_path} = "$start-$end";
-    }else{
-      next;
-    }
-  }
-  close TMP;
 }
 
 
