@@ -45,7 +45,11 @@ if ($target_id =~ /^>/)
 }
 else
 {
+<<<<<<< HEAD
 	die "Error: fasta foramt error.\n"; 
+=======
+	die "Error: fasta foramt error.\n";
+>>>>>>> 84a47f6818755d1fdd6e4e57fb5f44838226ea07
 }
 
 
@@ -75,7 +79,11 @@ foreach (@lines_PDB) {
   next if $line !~ m/^ATOM/;
   @tmp = split(/\s+/,$line);
   $atomtype = parse_pdb_row($line,"aname");
+<<<<<<< HEAD
   next if $atomtype != 'CA';
+=======
+  next if $atomtype ne 'CA'; 
+>>>>>>> 84a47f6818755d1fdd6e4e57fb5f44838226ea07
   
   
   if($frag_start == 0)
@@ -250,9 +258,15 @@ if($frag_num == 1)
 		
 		`cp $outputfolder/frag${idx}_fitting/qprob/Models/$best_model $outputfolder/frag${idx}_fitting.pdb`;
           
+<<<<<<< HEAD
         @content_tmp3 = split('_',substr($best_model,0,index($best_model,'.pdb')));
         $start_pos = $content_tmp3[@content_tmp3-1]+1;
         $end_pos =  $start_pos +  $frag_len -1;
+=======
+        @content_tmp3 = split('_',substr($best_model,0,index($best_model,'.pdb'));
+        $start_pos = $content_tmp3[@content_tmp3-1]+1;
+        $end_pos =  $start_pos +  $frag_len -1
+>>>>>>> 84a47f6818755d1fdd6e4e57fb5f44838226ea07
         
         
         #
@@ -301,9 +315,15 @@ if($frag_num == 1)
 		
 		`cp $outputfolder/frag${idx}_fitting/qprob/Models/$best_model $outputfolder/frag${idx}_fitting.pdb`;
           
+<<<<<<< HEAD
         @content_tmp3 = split('_',substr($best_model,0,index($best_model,'.pdb')));
         $start_pos = $content_tmp3[@content_tmp3-1]+1;
         $end_pos =  $start_pos +  $frag_len -1;
+=======
+        @content_tmp3 = split('_',substr($best_model,0,index($best_model,'.pdb'));
+        $start_pos = $content_tmp3[@content_tmp3-1]+1;
+        $end_pos =  $start_pos +  $frag_len -1
+>>>>>>> 84a47f6818755d1fdd6e4e57fb5f44838226ea07
         
         
         #

@@ -79,11 +79,7 @@ foreach (@lines_PDB) {
   next if $line !~ m/^ATOM/;
   @tmp = split(/\s+/,$line);
   $atomtype = parse_pdb_row($line,"aname");
-<<<<<<< HEAD
-  next if $atomtype != 'CA';
-=======
   next if $atomtype ne 'CA'; 
->>>>>>> 84a47f6818755d1fdd6e4e57fb5f44838226ea07
   
   
   if($frag_start == 0)
