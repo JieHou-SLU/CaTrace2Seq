@@ -3,7 +3,7 @@
 #  SBATCH CONFIG
 #--------------------------------------------------------------------------------
 #SBATCH -J  6272
-#SBATCH -o STIV-%j.out
+#SBATCH -o 6272-%j.out
 #SBATCH --partition Lewis,hpc5,hpc4
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -12,14 +12,13 @@
 #SBATCH --time 2-00:00
 #--------------------------------------------------------------------------------
 
-module load python/python-3.5.2
+outputdir=SOFTWARE_PATH/test/6272_out
 
-outputdir=SOFTWARE_PATH/test/STIV_out
+mkdir -p SOFTWARE_PATH/test/6272_out
 
-mkdir -p SOFTWARE_PATH/test/STIV_out
+cd SOFTWARE_PATH/test/6272_out
 
-cd SOFTWARE_PATH/test/STIV_out
+printf "perl SOFTWARE_PATH/scripts/CaTrace2Seq.pl examples/6272/6272_fragment.pdb examples/6272/6272.fasta SOFTWARE_PATH/test/6272_out 50 10\n\n"
 
-printf "python SOFTWARE_PATH/scripts/CryoEMSeq.py 40 SOFTWARE_PATH/example/STIV/STIV.fasta SOFTWARE_PATH/example/STIV/STIV_Ca_Trace.pdb STIV 10\n\n"
+perl SOFTWARE_PATH/scripts/CaTrace2Seq.pl examples/6272/6272_fragment.pdb examples/6272/6272.fasta SOFTWARE_PATH/test/6272_out 50 10
 
-python SOFTWARE_PATH/scripts/CryoEMSeq.py 40 SOFTWARE_PATH/example/STIV/STIV.fasta SOFTWARE_PATH/example/STIV/STIV_Ca_Trace.pdb STIV 10

@@ -88,7 +88,7 @@ configure_file2($option_list,'example');
 print "#########  Configuring option files, done\n\n\n";
 
 system("chmod +x $install_dir/bin/*.sh");
-system("chmod +x $install_dir/example/*.sh");
+system("chmod +x $install_dir/examples/*.sh");
 
 
 
