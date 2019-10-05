@@ -18,7 +18,13 @@ mkdir -p /home/jh7x3/CaTrace2Seq/test/6272_out
 
 cd /home/jh7x3/CaTrace2Seq/test/6272_out
 
+<<<<<<< HEAD
 printf "perl /home/jh7x3/CaTrace2Seq/scripts/CaTrace2Seq.pl /home/jh7x3/CaTrace2Seq/examples/6272/6272_fragment.pdb /home/jh7x3/CaTrace2Seq/examples/6272/6272.fasta /home/jh7x3/CaTrace2Seq/test/6272_out 50 10\n\n"
 
 perl /home/jh7x3/CaTrace2Seq/scripts/CaTrace2Seq.pl /home/jh7x3/CaTrace2Seq/examples/6272/6272_fragment.pdb /home/jh7x3/CaTrace2Seq/examples/6272/6272.fasta /home/jh7x3/CaTrace2Seq/test/6272_out 50 10
+=======
+printf "perl /Users/jay/Documents/CaTrace2Seq/scripts/CaTrace2Seq.pl /Users/jay/Documents/CaTrace2Seq/examples/6272/6272_fragment.pdb /Users/jay/Documents/CaTrace2Seq/examples/6272/6272.fasta /Users/jay/Documents/CaTrace2Seq/test/6272_out 50 10\n\n"
+
+perl /Users/jay/Documents/CaTrace2Seq/scripts/CaTrace2Seq.pl /Users/jay/Documents/CaTrace2Seq/examples/6272/6272_fragment.pdb /Users/jay/Documents/CaTrace2Seq/examples/6272/6272.fasta /Users/jay/Documents/CaTrace2Seq/test/6272_out 50 10
+>>>>>>> 66e64dec6cb610bf17c366d24d453a195a669261
 
