@@ -10,7 +10,7 @@ our %AA1TO3 = reverse %AA3TO1;
 $installation_dir = '/home/jh7x3/CaTrace2Seq/';
 if (@ARGV != 4)
 {
-	die "Error: need four parameters: <path of Ca trace> <path of fasta sequence> <output-directory> <number of cpus> \n";
+	die "Error: need four parameters: <path of Ca trace> <path of fasta sequence> <output-directory> <number of cpus>\n";
 }
 #### 
 $input_pdb = shift @ARGV;

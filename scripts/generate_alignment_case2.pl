@@ -9,7 +9,7 @@ use List::Util qw(shuffle);
 
 if (@ARGV != 4)
 {
-	die "Error: need four parameters: <path of Ca trace> <path of fasta sequence> <output-directory> <number of cpus> \n";
+	die "Error: need four parameters: <path of Ca trace> <path of fasta sequence> <output-directory> <number of cpus>\n";
 }
 #### 
 $input_pdb = shift @ARGV;
