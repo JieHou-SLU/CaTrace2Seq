@@ -162,7 +162,7 @@ foreach (@PDB_temp) {
 	$chainid = parse_pdb_row($line,"chain");
 	$resCounter = parse_pdb_row($line,"rnum");
   $this_rchain = $chainid;
-  next if $atomtype != 'CA';
+  next if $atomtype ne 'CA';
   
   $Ca_index++;
   $atom_index++;
