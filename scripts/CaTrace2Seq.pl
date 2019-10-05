@@ -45,7 +45,7 @@ if ($target_id =~ /^>/)
 }
 else
 {
-	die "Error: fasta foramt error.\n";
+	die "Error: fasta foramt error.\n"; 
 }
 
 
