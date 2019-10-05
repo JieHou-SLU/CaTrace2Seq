@@ -10,7 +10,7 @@ our %AA1TO3 = reverse %AA3TO1;
 $installation_dir = '/home/jh7x3/CaTrace2Seq/';
 if (@ARGV != 4)
 {
-	die "Error: need seven parameters: domain_list, domain model folder, query file(fasta), target id, output dir, modeller path, model number. \n";
+	die "Error: need four parameters: <path of Ca trace> <path of fasta sequence> <output-directory> <number of cpus> \n";
 }
 #### 
 $input_pdb = shift @ARGV;
@@ -138,7 +138,7 @@ foreach (@PDB_temp) {
 	$chainid = parse_pdb_row($line,"chain");
 	$resCounter = parse_pdb_row($line,"rnum");
   $this_rchain = $chainid;
-  next if $atomtype != 'CA';
+  next if $atomtype ne 'CA';
   
   $Ca_index++;
   $atom_index++;

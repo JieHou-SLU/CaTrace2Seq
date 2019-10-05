@@ -75,7 +75,7 @@ foreach (@lines_PDB) {
   next if $line !~ m/^ATOM/;
   @tmp = split(/\s+/,$line);
   $atomtype = parse_pdb_row($line,"aname");
-  next if $atomtype ne 'CA';
+  next if $atomtype != 'CA';
   
   
   if($frag_start == 0)
