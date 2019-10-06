@@ -98,7 +98,7 @@ print("\n#### (2) Download basic tools\n\n");
 
 chdir($tools_dir);
 #$basic_tools_list = "TMscore.tar.gz;qprob_package.tar.gz;R-3.2.0";
-$basic_tools_list = "TMscore.tar.gz;R-3.2.0";
+$basic_tools_list = "TMscore.tar.gz;R-3.2.0.tar.gz";
 @basic_tools = split(';',$basic_tools_list);
 foreach $tool (@basic_tools)
 {
@@ -119,7 +119,13 @@ foreach $tool (@basic_tools)
 	{
 		 `rm $tool`;
 	}
-	`wget http://sysbio.rnet.missouri.edu/multicom_db_tools/tools/$tool`;
+	if($tool eq 'R-3.2.0.tar.gz')
+	{
+		`wget http://sysbio.rnet.missouri.edu/bdm_download/DeepRank_db_tools/tools/$tool`;
+	}else{
+		`wget http://sysbio.rnet.missouri.edu/multicom_db_tools/tools/$tool`;
+	}
+	
 	if(-e "$tool")
 	{
 		print "\n\t$tool is found, start extracting files......\n\n";
@@ -131,7 +137,7 @@ foreach $tool (@basic_tools)
 		`rm $tool`;
 		`chmod -R 755 $toolname`;
 	}else{
-		die "Failed to download $tool from http://sysbio.rnet.missouri.edu/bdm_download/CaTrace2Seq_db_tools/tools, please contact chengji\@missouri.edu\n";
+		die "Failed to download $tool from http://sysbio.rnet.missouri.edu/multicom_db_tools/tools, please contact chengji\@missouri.edu\n";
 	}
 }
 
