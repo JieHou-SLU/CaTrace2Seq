@@ -97,8 +97,8 @@ system("chmod +x $install_dir/examples/*.sh");
 print("\n#### (2) Download basic tools\n\n");
 
 chdir($tools_dir);
-#$basic_tools_list = "TMscore.tar.gz;qprob_package.tar.gz";
-$basic_tools_list = "TMscore.tar.gz";
+#$basic_tools_list = "TMscore.tar.gz;qprob_package.tar.gz;R-3.2.0";
+$basic_tools_list = "TMscore.tar.gz;R-3.2.0";
 @basic_tools = split(';',$basic_tools_list);
 foreach $tool (@basic_tools)
 {
@@ -184,6 +184,20 @@ if(-d $addr_scwrl4)
 
 print "\n\n";
 
+
+#### install R-3.2.0.tar.gz
+
+open(OUT,">$install_dir/installation/P1_install_R-3.2.0.sh") || die "Failed to open file $install_dir/installation/P1_install_R-3.2.0.sh";
+print OUT "#!/bin/bash -e\n\n";
+print OUT "echo \" Start compile R-3.2.0 (will take ~3 min)\"\n\n";
+print OUT "cd $install_dir/tools/R-3.2.0\n\n";
+print OUT "make clean\n\n";
+print OUT "./configure --prefix=$install_dir/tools/R-3.2.0  --with-readline=no --with-x
+=no\n\n";
+print OUT "make\n\n";
+print OUT "make install\n\n";
+print OUT "echo \"installed\" > $install_dir/tools/R-3.2.0/install.done\n\n";
+close OUT;
 
 
 
