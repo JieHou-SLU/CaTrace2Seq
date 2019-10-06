@@ -142,10 +142,10 @@ if($frag_num == 1)
   if(length($pdb_seq) > length($qseq))
   {
     print "perl $installation_dir/scripts/generate_alignment_case1.pl  $init_pdb $fasta_file  $outputfolder/frag1_fitting $proc_num\n\n";
-    `perl $installation_dir/scripts/generate_alignment_case1.pl  $outputfolder/frag_dir/frag1.pdb $fasta_file  $outputfolder $proc_num`;
+    `perl $installation_dir/scripts/generate_alignment_case1.pl  $outputfolder/frag_dir/frag1.pdb $fasta_file  $outputfolder/frag1_fitting $proc_num`;
   }else{
     print "perl $installation_dir/scripts/generate_alignment_case2.pl  $init_pdb $fasta_file  $outputfolder/frag1_fitting $proc_num\n\n";
-    `perl $installation_dir/scripts/generate_alignment_case2.pl  $outputfolder/frag_dir/frag1.pdb $fasta_file  $outputfolder $proc_num`;
+    `perl $installation_dir/scripts/generate_alignment_case2.pl  $outputfolder/frag_dir/frag1.pdb $fasta_file  $outputfolder/frag1_fitting $proc_num`;
   }
 }else{
 
@@ -327,7 +327,6 @@ sub generate_gaps
 {
 	$gnum = $_[0]; 	
 	$gaps = "";
-	$i;
 	for ($i = 0; $i < $gnum; $i++)
 	{
 		$gaps .= "-"; 
@@ -339,7 +338,6 @@ sub generate_aa
 {
 	$gnum = $_[0]; 	
 	$gaps = "";
-	$i;
 	for ($i = 0; $i < $gnum; $i++)
 	{
 		$gaps .= "G"; 
@@ -351,7 +349,6 @@ sub generate_aa
 sub parse_pdb_row{
 	$row = shift;
 	$param = shift;
-	$result;
 	$result = substr($row,6,5) if ($param eq "anum");
 	$result = substr($row,12,4) if ($param eq "aname");
 	$result = substr($row,16,1) if ($param eq "altloc");
