@@ -18,7 +18,7 @@ mkdir -p /Users/jay/Documents/CaTrace2Seq/test/6272_out
 
 cd /Users/jay/Documents/CaTrace2Seq/test/6272_out
 
-printf "perl /Users/jay/Documents/CaTrace2Seq/scripts/CaTrace2Seq.pl examples/6272/6272_fragment.pdb examples/6272/6272.fasta /Users/jay/Documents/CaTrace2Seq/test/6272_out 50 10\n\n"
+printf "perl /Users/jay/Documents/CaTrace2Seq/scripts/CaTrace2Seq.pl /Users/jay/Documents/CaTrace2Seq/examples/6272/6272_fragment.pdb /Users/jay/Documents/CaTrace2Seq/examples/6272/6272.fasta /Users/jay/Documents/CaTrace2Seq/test/6272_out 50 10\n\n"
 
-perl /Users/jay/Documents/CaTrace2Seq/scripts/CaTrace2Seq.pl examples/6272/6272_fragment.pdb examples/6272/6272.fasta /Users/jay/Documents/CaTrace2Seq/test/6272_out 50 10
+perl /Users/jay/Documents/CaTrace2Seq/scripts/CaTrace2Seq.pl /Users/jay/Documents/CaTrace2Seq/examples/6272/6272_fragment.pdb /Users/jay/Documents/CaTrace2Seq/examples/6272/6272.fasta /Users/jay/Documents/CaTrace2Seq/test/6272_out 50 10
 
