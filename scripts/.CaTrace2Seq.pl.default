@@ -327,7 +327,6 @@ sub generate_gaps
 {
 	$gnum = $_[0]; 	
 	$gaps = "";
-	$i;
 	for ($i = 0; $i < $gnum; $i++)
 	{
 		$gaps .= "-"; 
@@ -339,7 +338,6 @@ sub generate_aa
 {
 	$gnum = $_[0]; 	
 	$gaps = "";
-	$i;
 	for ($i = 0; $i < $gnum; $i++)
 	{
 		$gaps .= "G"; 
@@ -351,7 +349,6 @@ sub generate_aa
 sub parse_pdb_row{
 	$row = shift;
 	$param = shift;
-	$result;
 	$result = substr($row,6,5) if ($param eq "anum");
 	$result = substr($row,12,4) if ($param eq "aname");
 	$result = substr($row,16,1) if ($param eq "altloc");
