@@ -147,6 +147,46 @@ if($frag_num == 1)
     print "perl $installation_dir/scripts/generate_alignment_case2.pl  $init_pdb $fasta_file  $outputfolder/frag1_fitting $proc_num\n\n";
     `perl $installation_dir/scripts/generate_alignment_case2.pl  $outputfolder/frag_dir/frag1.pdb $fasta_file  $outputfolder/frag1_fitting $proc_num`;
   }
+  
+
+	## score by modeleva/qprob
+
+	`mkdir -p $outputfolder/frag1_fitting/qprob/Models`;
+
+	`cp -ar $outputfolder/frag1_fitting/Models/*pdb $outputfolder/frag1_fitting/qprob/Models`;
+	print("sh $installation_dir/tools/qprob_package/bin/Qprob.sh $fasta_file $fasta_file  $outputfolder/frag1_fitting/qprob/Models $outputfolder/frag1_fitting/qprob/\n\n");
+	`sh $installation_dir/tools/qprob_package/bin/Qprob.sh $fasta_file $fasta_file  $outputfolder/frag1_fitting/qprob/Models $outputfolder/frag1_fitting/qprob/`;
+
+	@tem111 = split(/\//,$fasta_file );
+	@tem111 = split(/\./,$tem111[@tem111-1]);
+	$name = $tem111[0];
+
+
+	$scorefile = "$outputfolder/frag1_fitting/qprob//$name.Qprob_score";
+	if(!(-e $scorefile))
+	{
+		print "Failed to find $scorefile\n";
+		goto FINISH;
+	}
+	open(TMPFILE,"$scorefile") || die "Failed to open file $scorefile\n";
+	@content_tmp = <TMPFILE>;
+	close TMPFILE;
+	$info = shift @content_tmp;
+	@content_tmp2 = split(/\s+/,$info);
+	$best_model = $content_tmp2[0]; #temp_r_NC_78.pdb
+
+	`cp $outputfolder/frag1_fitting/qprob/Models/$best_model $outputfolder/frag1_fitting.pdb`;
+  
+	@content_tmp3 = split('_',substr($best_model,0,index($best_model,'.pdb')));
+	$start_pos = $content_tmp3[@content_tmp3-1]+1;
+	$end_pos =  $start_pos +  $frag_len -1;
+
+
+	#
+	`perl $installation_dir/scripts/extract_atom.pl $outputfolder/frag1_fitting.pdb $outputfolder/frag1_fitting_${start_pos}_${end_pos}.pdb $start_pos $end_pos`;
+
+
+  
 }else{
 
   ### sort fragments by length
