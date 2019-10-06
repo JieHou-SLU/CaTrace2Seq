@@ -250,7 +250,7 @@ if($frag_num == 1)
 		
 		`cp $outputfolder/frag${idx}_fitting/qprob/Models/$best_model $outputfolder/frag${idx}_fitting.pdb`;
           
-        @content_tmp3 = split('_',substr($best_model,0,index($best_model,'.pdb'));
+        @content_tmp3 = split('_',substr($best_model,0,index($best_model,'.pdb')));
         $start_pos = $content_tmp3[@content_tmp3-1]+1;
         $end_pos =  $start_pos +  $frag_len -1;
         
@@ -301,7 +301,7 @@ if($frag_num == 1)
 		
 		`cp $outputfolder/frag${idx}_fitting/qprob/Models/$best_model $outputfolder/frag${idx}_fitting.pdb`;
           
-        @content_tmp3 = split('_',substr($best_model,0,index($best_model,'.pdb'));
+        @content_tmp3 = split('_',substr($best_model,0,index($best_model,'.pdb')));
         $start_pos = $content_tmp3[@content_tmp3-1]+1;
         $end_pos =  $start_pos +  $frag_len -1;
         
