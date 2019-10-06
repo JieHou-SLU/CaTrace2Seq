@@ -75,7 +75,7 @@ foreach (@lines_PDB) {
   next if $line !~ m/^ATOM/;
   @tmp = split(/\s+/,$line);
   $atomtype = parse_pdb_row($line,"aname");
-  next if $atomtype ne 'CA';
+  next if $atomtype ne 'CA'; 
   
   
   if($frag_start == 0)
@@ -252,7 +252,7 @@ if($frag_num == 1)
           
         @content_tmp3 = split('_',substr($best_model,0,index($best_model,'.pdb'));
         $start_pos = $content_tmp3[@content_tmp3-1]+1;
-        $end_pos =  $start_pos +  $frag_len -1
+        $end_pos =  $start_pos +  $frag_len -1；
         
         
         #
@@ -303,7 +303,7 @@ if($frag_num == 1)
           
         @content_tmp3 = split('_',substr($best_model,0,index($best_model,'.pdb'));
         $start_pos = $content_tmp3[@content_tmp3-1]+1;
-        $end_pos =  $start_pos +  $frag_len -1
+        $end_pos =  $start_pos +  $frag_len -1；
         
         
         #
