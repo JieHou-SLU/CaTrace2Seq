@@ -154,8 +154,8 @@ if($frag_num == 1)
 	`mkdir -p $outputfolder/frag1_fitting/qprob/Models`;
 
 	`cp -ar $outputfolder/frag1_fitting/Models/*pdb $outputfolder/frag1_fitting/qprob/Models`;
-	print("sh $installation_dir/tools/qprob_package/bin/Qprob.sh $fasta_file $fasta_file  $outputfolder/frag1_fitting/qprob/Models $outputfolder/frag1_fitting/qprob/\n\n");
-	`sh $installation_dir/tools/qprob_package/bin/Qprob.sh $fasta_file $fasta_file  $outputfolder/frag1_fitting/qprob/Models $outputfolder/frag1_fitting/qprob/`;
+	print("sh $installation_dir/tools/qprob_package/bin/Qprob.sh $fasta_file  $outputfolder/frag1_fitting/qprob/Models $outputfolder/frag1_fitting/qprob/\n\n");
+	`sh $installation_dir/tools/qprob_package/bin/Qprob.sh $fasta_file  $outputfolder/frag1_fitting/qprob/Models $outputfolder/frag1_fitting/qprob/`;
 
 	@tem111 = split(/\//,$fasta_file );
 	@tem111 = split(/\./,$tem111[@tem111-1]);
@@ -267,8 +267,8 @@ if($frag_num == 1)
 		`mkdir -p $outputfolder/frag${idx}_fitting/qprob/Models`;
 
 		`cp -ar $outputfolder/frag${idx}_fitting/Models/*pdb $outputfolder/frag${idx}_fitting/qprob/Models`;
-		print("sh $installation_dir/tools/qprob_package/bin/Qprob.sh $fasta_file $fasta_file  $outputfolder/frag${idx}_fitting/qprob/Models $outputfolder/frag${idx}_fitting/qprob/\n\n");
-		`sh $installation_dir/tools/qprob_package/bin/Qprob.sh $fasta_file $fasta_file  $outputfolder/frag${idx}_fitting/qprob/Models $outputfolder/frag${idx}_fitting/qprob/`;
+		print("sh $installation_dir/tools/qprob_package/bin/Qprob.sh $fasta_file  $outputfolder/frag${idx}_fitting/qprob/Models $outputfolder/frag${idx}_fitting/qprob/\n\n");
+		`sh $installation_dir/tools/qprob_package/bin/Qprob.sh $fasta_file  $outputfolder/frag${idx}_fitting/qprob/Models $outputfolder/frag${idx}_fitting/qprob/`;
 
 		@tem111 = split(/\//,$fasta_file );
 		@tem111 = split(/\./,$tem111[@tem111-1]);
@@ -318,8 +318,8 @@ if($frag_num == 1)
 		`mkdir -p $outputfolder/frag${idx}_fitting/qprob/Models`;
 
 		`cp -ar $outputfolder/frag${idx}_fitting/Models/*pdb $outputfolder/frag${idx}_fitting/qprob/Models`;
-		 print("sh $installation_dir/tools/qprob_package/bin/Qprob.sh $fasta_file $fasta_file  $outputfolder/frag${idx}_fitting/qprob/Models $outputfolder/frag${idx}_fitting/qprob/\n\n");
-		`sh $installation_dir/tools/qprob_package/bin/Qprob.sh $fasta_file $fasta_file  $outputfolder/frag${idx}_fitting/qprob/Models $outputfolder/frag${idx}_fitting/qprob/`;
+		 print("sh $installation_dir/tools/qprob_package/bin/Qprob.sh $fasta_file  $outputfolder/frag${idx}_fitting/qprob/Models $outputfolder/frag${idx}_fitting/qprob/\n\n");
+		`sh $installation_dir/tools/qprob_package/bin/Qprob.sh $fasta_file  $outputfolder/frag${idx}_fitting/qprob/Models $outputfolder/frag${idx}_fitting/qprob/`;
 
 		@tem111 = split(/\//,$fasta_file );
 		@tem111 = split(/\./,$tem111[@tem111-1]);

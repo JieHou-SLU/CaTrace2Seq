@@ -1,0 +1,14 @@
+perl /home/jh7x3/CaTrace2Seq/scripts/CaTrace2Seq.pl /home/jh7x3/CaTrace2Seq/examples/8410/8410_fragment.pdb /home/jh7x3/CaTrace2Seq/examples/8410/8410.fasta /home/jh7x3/CaTrace2Seq/test/8410_out 50 10
+
+Fragement 1 has 483 atoms
+Fragement 2 has 125 atoms
+Fragement 3 has 178 atoms
+Fragement 4 has 23 atoms
+Fragement 5 has 47 atoms
+Fragement 6 has 3 atoms
+Fragement 7 has 3 atoms
+Fragement 8 has 11 atoms
+Fragement 9 has 8 atoms
+Total 10 fragments are found
+perl /home/jh7x3/CaTrace2Seq//scripts/generate_alignment_case2.pl  /home/jh7x3/CaTrace2Seq/test/8410_out/frag_dir_sorted/frag1.pdb /home/jh7x3/CaTrace2Seq/examples/8410/8410.fasta  /home/jh7x3/CaTrace2Seq/test/8410_out/frag1_fitting 10
+

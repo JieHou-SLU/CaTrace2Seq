@@ -180,7 +180,7 @@ if(!(-e "$outputfolder/input_r.rebuilt.pdb"))
 open OUTPDB, ">$outputfolder/temp0_r.pdb" or die "ERROR! Could not open $outputfolder/temp0_r.pdb\n";
 
 open INPUTPDB, "$outputfolder/input_r_scwrl.pdb" or die "ERROR! Could not open $outputfolder/input_r_scwrl.pdb";
-my @lines_PDB = <INPUTPDB>;
+@lines_PDB = <INPUTPDB>;
 close INPUTPDB;
 
 @PDB_temp=();

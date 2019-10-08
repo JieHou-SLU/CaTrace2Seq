@@ -1,0 +1,25 @@
+perl /home/jh7x3/CaTrace2Seq/scripts/CaTrace2Seq.pl /home/jh7x3/CaTrace2Seq/examples/5778/5778_fragment.pdb /home/jh7x3/CaTrace2Seq/examples/5778/5778.fasta /home/jh7x3/CaTrace2Seq/test/5778_out 50 10
+
+Fragement 1 has 79 atoms
+Fragement 2 has 19 atoms
+Fragement 3 has 23 atoms
+Fragement 4 has 329 atoms
+Fragement 5 has 13 atoms
+Total 6 fragments are found
+perl /home/jh7x3/CaTrace2Seq//scripts/generate_alignment_case2.pl  /home/jh7x3/CaTrace2Seq/test/5778_out/frag_dir_sorted/frag1.pdb /home/jh7x3/CaTrace2Seq/examples/5778/5778.fasta  /home/jh7x3/CaTrace2Seq/test/5778_out/frag1_fitting 10
+
+sh /home/jh7x3/CaTrace2Seq//tools/qprob_package/bin/Qprob.sh /home/jh7x3/CaTrace2Seq/examples/5778/5778.fasta /home/jh7x3/CaTrace2Seq/examples/5778/5778.fasta  /home/jh7x3/CaTrace2Seq/test/5778_out/frag1_fitting/qprob/Models /home/jh7x3/CaTrace2Seq/test/5778_out/frag1_fitting/qprob/
+
+mkdir: cannot create directory `/home/jh7x3/CaTrace2Seq/test/5778_out/frag1_fitting/qprob/Models.tmp': File exists
+[blastpgp] WARNING: posReadCheckpoint: Attempting to recover data from previous checkpoint
+
+[blastpgp] WARNING: posReadCheckpoint: Data recovered successfully
+
+[blastpgp] WARNING: posReadCheckpoint: Attempting to recover data from previous checkpoint
+
+[blastpgp] WARNING: posReadCheckpoint: Data recovered successfully
+
+mkdir: cannot create directory `/home/jh7x3/CaTrace2Seq/test/5778_out/frag1_fitting/qprob/Models/scwrl_model': File exists
+mkdir: cannot create directory `/home/jh7x3/CaTrace2Seq/test/5778_out/frag1_fitting/qprob/Models/scwrl_model/5778': File exists
+rm: cannot remove `5778.tmp': No such file or directory
+rm: cannot remove `5778.tmp.self.align': No such file or directory
