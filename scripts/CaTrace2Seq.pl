@@ -256,10 +256,10 @@ if($frag_num == 1)
       if(length($pdb_seq) > length($qseq))
       {
         print "perl $installation_dir/scripts/generate_alignment_case1.pl  $frag1_sort $fasta_file  $outputfolder/frag${idx}_fitting $proc_num\n\n";
-        `perl $installation_dir/scripts/generate_alignment_case1.pl  $frag1_sort $fasta_file  $outputfolder/frag${idx}_fitting $proc_num`;
+        system("perl $installation_dir/scripts/generate_alignment_case1.pl  $frag1_sort $fasta_file  $outputfolder/frag${idx}_fitting $proc_num");
       }else{
         print "perl $installation_dir/scripts/generate_alignment_case2.pl  $frag1_sort $fasta_file  $outputfolder/frag${idx}_fitting $proc_num\n\n";
-        `perl $installation_dir/scripts/generate_alignment_case2.pl  $frag1_sort $fasta_file  $outputfolder/frag${idx}_fitting $proc_num`;
+        system("perl $installation_dir/scripts/generate_alignment_case2.pl  $frag1_sort $fasta_file  $outputfolder/frag${idx}_fitting $proc_num");
       }
       
       ## score by modeleva/qprob
@@ -268,7 +268,7 @@ if($frag_num == 1)
 
 		`cp -ar $outputfolder/frag${idx}_fitting/Models/*pdb $outputfolder/frag${idx}_fitting/qprob/Models`;
 		print("sh $installation_dir/tools/qprob_package/bin/Qprob.sh $fasta_file  $outputfolder/frag${idx}_fitting/qprob/Models $outputfolder/frag${idx}_fitting/qprob/\n\n");
-		`sh $installation_dir/tools/qprob_package/bin/Qprob.sh $fasta_file  $outputfolder/frag${idx}_fitting/qprob/Models $outputfolder/frag${idx}_fitting/qprob/`;
+		system("sh $installation_dir/tools/qprob_package/bin/Qprob.sh $fasta_file  $outputfolder/frag${idx}_fitting/qprob/Models $outputfolder/frag${idx}_fitting/qprob/");
 
 		@tem111 = split(/\//,$fasta_file );
 		@tem111 = split(/\./,$tem111[@tem111-1]);
@@ -310,7 +310,7 @@ if($frag_num == 1)
     }else{
         ### mapping remaining fragments
         print "perl $installation_dir/scripts/generate_alignment_case2_update.pl  $frag1_sort $fasta_file $outputfolder/frag${idx}_fitting 10  $proc_num $outputfolder/fitted_fragements.info\n\n";
-        `perl $installation_dir/scripts/generate_alignment_case2_update.pl  $frag1_sort $fasta_file $outputfolder/frag${idx}_fitting 10  $proc_num $outputfolder/fitted_fragements.info`;
+        system("perl $installation_dir/scripts/generate_alignment_case2_update.pl  $frag1_sort $fasta_file $outputfolder/frag${idx}_fitting 10  $proc_num $outputfolder/fitted_fragements.info");
      
      
          ## score by modeleva/qprob
