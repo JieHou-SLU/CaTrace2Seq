@@ -156,6 +156,79 @@ if(-d $tooldir)
 	}else{
 		die "The configure.pl file for $tooldir doesn't exist, please contact us(Jie Hou: jh7x3\@mail.missouri.edu)\n";
 	}
+	
+	#### check the pspro and sspro in qprob
+	print "#### check the pspro and sspro in qprob\n\n";
+	for($num = 1; $num <=2; $num++)
+	{
+		$check_pass = 1;
+		`$install_dir/tools/qprob_package/tools/pspro2.0/server/predict_seq_ss &> $install_dir/tools/qprob_package/tools/pspro2.0/server/test.log`;
+
+		open(TMP,"$install_dir/tools/qprob_package/tools/pspro2.0/server/test.log");
+		@info_log = <TMP>;
+		close TMP;
+
+		$infos = shift @info_log;
+
+		if(index($infos,'model_definition')>0 or index($infos,'dataset_file') >0)
+		{
+			print "pspro is working for qprob\n";	
+		}else{
+			print "pspro is not working, checking backup files\n";
+			`$install_dir/tools/pspro2_server_32bit/predict_seq_ss &> $install_dir/tools/pspro2_server_32bit/test.log`;
+
+			open(TMP,"$install_dir/tools/pspro2_server_32bit/test.log");
+			@info_log2 = <TMP>;
+			close TMP;
+
+			$infos2 = shift @info_log2;	
+			if(index($infos2,'model_definition')>0 or index($infos2,'dataset_file') >0)
+			{
+				print "backup pspro is working\n";	
+				`cp -ar $install_dir/tools/pspro2_server_32bit/* $install_dir/tools/qprob_package/tools/pspro2.0/server/`;
+			}else{	
+				print "Both pspro binary versions failed to pass the examination, qprob may not work\n";
+			}
+			$check_pass = 0;
+		}
+
+
+	
+		`$install_dir/tools/qprob_package/tools/sspro4/server/predict_seq_ss &> $install_dir/tools/qprob_package/tools/sspro4/server/test.log`;
+
+		open(TMP,"$install_dir/tools/qprob_package/tools/sspro4/server/test.log");
+		@info_log = <TMP>;
+		close TMP;
+
+		$infos = shift @info_log;
+
+		if(index($infos,'model_definition')>0 or index($infos,'dataset_file') >0)
+		{
+			print "sspro is working for qprob\n";	
+		}else{
+			print "sspro is not working, checking backup files\n";
+			`$install_dir/tools/pspro2_server_32bit/predict_seq_ss &> $install_dir/tools/pspro2_server_32bit/test.log`;
+
+			open(TMP,"$install_dir/tools/pspro2_server_32bit/test.log");
+			@info_log2 = <TMP>;
+			close TMP;
+
+			$infos2 = shift @info_log2;	
+			if(index($infos2,'model_definition')>0 or index($infos2,'dataset_file') >0)
+			{
+				print "backup pspro is working\n";	
+				`cp -ar $install_dir/tools/pspro2_server_32bit/* $install_dir/tools/qprob_package/tools/sspro4/server/`;
+			}else{	
+				print "Both pspro binary versions failed to pass the examination, qprob may not work\n";
+			}
+			$check_pass = 0;
+		}
+		if($check_pass ==1)
+		{
+			last; # pass 
+		}
+
+	}
 }
 
 $addr_scwrl4 = $CaTrace2Seq_db_tools_dir."/MTMG/";
@@ -203,6 +276,7 @@ print OUT "make\n\n";
 print OUT "make install\n\n";
 print OUT "echo \"installed\" > $install_dir/tools/R-3.2.0/install.done\n\n";
 close OUT;
+
 
 
 
