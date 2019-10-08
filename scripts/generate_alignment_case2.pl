@@ -420,13 +420,13 @@ foreach $file_path (sort @running_files)
 		}
 	}
 	
-	if(!(-e substr($file_path,0,length($file_path)-3).".done"))
+	if(!(-e "$file_path.done"))
 	{
 		print "run test $file_path\n";
 		system("sh $file_path &> $file_path.log &");
 	}else{
 		print "$file_path has been done\n";
-		$queue_file = substr($file_path,0,length($file_path)-3).".queued";
+		$queue_file = "$file_path.queued";
 		if(-e $queue_file)
 		{
 			`rm $queue_file`;
