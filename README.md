@@ -1,6 +1,5 @@
 #### install tools
 
-## cd /storage/htc/bdm/jh7x3/Cryo_em_paper/paper_version_20190817/
 ## git clone -b paper-version  https://github.com/DrDongSi/Ca-Backbone-Prediction.git
 ## cd Ca-Backbone-Prediction
 ##  module load python/python-3.5.2
